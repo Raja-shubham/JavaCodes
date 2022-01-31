@@ -1,0 +1,13 @@
+package Practice;
+
+import java.util.Iterator;
+
+public class Exam {
+
+	public static void main(String[] args) {
+		float[] f=new float[5];
+		Object s=f;
+		System.out.println(f[0]);
+	}
+
+}

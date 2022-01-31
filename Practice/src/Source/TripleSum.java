@@ -1,0 +1,46 @@
+package Source;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class TripleSum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the size of array:");
+		int size = sc.nextInt();
+		int arr[] = new int[size];
+		System.out.println("enter the elements");
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = sc.nextInt();
+		}
+		System.out.println("enter the target :");
+		int target=sc.nextInt();
+		boolean bl=TripleAdd(arr,target);
+		System.out.println(bl);
+	}
+	static  boolean TripleAdd(int arr[],int target) {
+		 int left=0,right=0,sum=0;
+		 Arrays.sort(arr);
+		for (int i = 0; i < arr.length-1; i++) {
+			left=i+1;right=arr.length-1;
+			while(left<right) {
+				sum=arr[i]+arr[left]+arr[right];
+				if(sum==target) {
+					return true;
+				}
+				else {
+					if(sum>target) {
+						right--;
+					}
+					else {
+						left++;
+					}
+				}
+			}
+		}
+		return false;
+	}
+
+}

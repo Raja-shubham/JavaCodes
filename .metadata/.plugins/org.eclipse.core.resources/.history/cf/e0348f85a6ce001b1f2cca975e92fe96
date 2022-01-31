@@ -1,0 +1,38 @@
+package Tree;
+
+public class Simple {
+	
+	static Node root;
+	
+	static class Node{
+		int data;
+		Node left,right;
+		
+		public Node(int data) {
+			this.data=data;
+			right=left=null;
+		}
+	}
+	static void add(int data) {
+		Node newNode=new Node(data);
+		if(root==null)
+			root=newNode;
+	}
+	static void traverseTree(Node n) {
+	    if (n != null) {
+	      traverseTree(n.left);
+	      System.out.print(" " + n.data);
+	      traverseTree(n.right);
+	    }
+	  }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Simple t=new Simple();
+		t.root=new Node(10);
+		t.root.left=new Node(5);
+		t.root.right=new Node(15);
+		t.traverseTree(root);
+		
+	}
+
+}

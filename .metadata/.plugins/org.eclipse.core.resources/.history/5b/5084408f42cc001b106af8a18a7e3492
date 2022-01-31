@@ -1,0 +1,17 @@
+package Practice;
+class A extends Thread{
+	public synchronized void method() {
+		System.out.println("methos m1():");
+	}
+}
+public class prac {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		A a=new A();
+		A b=new A();
+		a.method();
+		b.method();
+	}
+
+}

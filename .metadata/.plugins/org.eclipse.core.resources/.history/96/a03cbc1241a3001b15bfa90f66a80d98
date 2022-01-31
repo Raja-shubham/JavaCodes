@@ -1,0 +1,22 @@
+package Practice;
+
+import java.util.*;
+import java.util.regex.*;
+
+public class Regex {
+      
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int count=0;
+		Pattern p=Pattern.compile("a");
+		Matcher m=p.matcher("aaaaaaaaa");
+		while(m.find()) {
+			System.out.println(m.start());
+			count++;
+			//System.out.println(count);
+		}
+		System.out.println(count);
+
+	}
+
+}

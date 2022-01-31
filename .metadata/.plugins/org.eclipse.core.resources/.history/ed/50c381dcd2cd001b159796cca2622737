@@ -1,0 +1,66 @@
+package LinkedPractice;
+
+public class Node1 {
+	static Node head;
+	static class Node{
+		int data;
+		Node next;
+		
+		public Node(int data) {
+			this.data=data;
+			this.next=null;
+		}
+	}
+	
+	static void add(int data) {
+		Node newNode = new Node(data); 
+		if(head==null) {
+			newNode.next=head;
+			head=newNode;
+		}
+		else {
+			Node t=head;
+			while(t.next!=null) {
+				t=t.next;
+			}
+			t.next=newNode;
+			newNode.next=null;
+		}
+	}
+	static void display() {
+		Node t=head;
+		if(head==null) {
+			System.out.println("Empty Linked List ");
+		}
+		while(t!=null) {
+			System.out.println(t.data+" ");
+			t=t.next;
+		}
+	}
+	static void insertAt(int position,int data) {
+		Node newNode=new Node(data);
+		Node t=head;
+		int count=1;
+		while(count!=position && t.next.next=null) {
+			t=t.next;
+			count++;
+		}
+		if(t.next==null)
+			System.out.println("invalid Position");
+		newNode.next=t.next;
+		t.next=newNode;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Node1 list=new Node1();
+		list.add(2);
+		list.add(3);
+		list.add(4);
+		list.display();
+		list.insertAt(3, 1);
+		//System.out.println(head.data);
+
+	}
+
+}
